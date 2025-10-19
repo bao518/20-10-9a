@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mã QR 20/10 - 9A</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+      color: #e75480;
+      font-size: 2.5em;
+      text-shadow: 0 0 10px #ffd1dc;
+      margin-bottom: 0.2em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffd1dc; }
+      to { text-shadow: 0 0 20px #ff9ecb; }
+    }
+
+    p {
+      color: #444;
+      font-size: 1.1em;
+      max-width: 500px;
+      text-align: center;
+      margin: 0 20px 20px;
+    }
+
+    #qrcode {
+      margin: 20px auto;
+      padding: 10px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .petal {
+      position: absolute;
+      background-color: #ffb7c5;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall 6s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10%) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 Happy 20/10 các bạn nữ 9A 🌸</h1>
+  <p>
+    Chúc các bạn nữ 9A luôn tươi tắn, tự tin và mạnh mẽ như những cánh hoa anh đào.  
+    Cảm ơn các bạn vì đã mang đến niềm vui, tiếng cười và những điều tốt đẹp cho lớp mình.  
+    Mong rằng mỗi ngày trôi qua đều là một ngày rực rỡ của riêng các bạn 💖
+  </p>
+
+  <div id="qrcode"></div>
+
+  <script>
+    // 🎯 Tạo mã QR (bạn có thể thay link ở đây)
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://20-10-9a.netlify.app", 
+      width: 200,
+      height: 200
+    });
+
+    // 🌸 Hiệu ứng hoa rơi
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.width = Math.random() * 10 + 8 + 'px';
+      petal.style.height = petal.style.width;
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = Math.random() * 3 + 4 + 's';
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 6000);
+    }
+    setInterval(createPetal, 200);
+  </script>
+
+</body>
+</html>
